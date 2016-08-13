@@ -42,8 +42,8 @@ public class Bike extends BaseEntity implements Serializable {
 	@Property("added on")
 	private Date addedOn = new Date();
 
-	@Property("deleted")
-	private boolean deleted = false;
+	@Property("is active")
+	private boolean isactive = false;
 
 	public Bike() {
 
@@ -113,12 +113,12 @@ public class Bike extends BaseEntity implements Serializable {
 		this.addedOn = addedOn;
 	}
 
-	public boolean isDeleted() {
-		return deleted;
+	public boolean isIsactive() {
+		return isactive;
 	}
 
-	public void setDeleted(boolean deleted) {
-		this.deleted = deleted;
+	public void setIsactive(boolean isactive) {
+		this.isactive = isactive;
 	}
 
 	@Override
@@ -126,7 +126,7 @@ public class Bike extends BaseEntity implements Serializable {
 		return "Bike [title=" + title + ", description=" + description
 				+ ", rating=" + rating + ", price=" + price + ", quantity="
 				+ quantity + ", type=" + type + ", images=" + images
-				+ ", addedOn=" + addedOn + ", deleted=" + deleted + "]";
+				+ ", addedOn=" + addedOn + ", isactive=" + isactive + "]";
 	}
 
 	@Override
@@ -134,10 +134,10 @@ public class Bike extends BaseEntity implements Serializable {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((addedOn == null) ? 0 : addedOn.hashCode());
-		result = prime * result + (deleted ? 1231 : 1237);
 		result = prime * result
 				+ ((description == null) ? 0 : description.hashCode());
 		result = prime * result + ((images == null) ? 0 : images.hashCode());
+		result = prime * result + (isactive ? 1231 : 1237);
 		long temp;
 		temp = Double.doubleToLongBits(price);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
@@ -163,8 +163,6 @@ public class Bike extends BaseEntity implements Serializable {
 				return false;
 		} else if (!addedOn.equals(other.addedOn))
 			return false;
-		if (deleted != other.deleted)
-			return false;
 		if (description == null) {
 			if (other.description != null)
 				return false;
@@ -174,6 +172,8 @@ public class Bike extends BaseEntity implements Serializable {
 			if (other.images != null)
 				return false;
 		} else if (!images.equals(other.images))
+			return false;
+		if (isactive != other.isactive)
 			return false;
 		if (Double.doubleToLongBits(price) != Double
 				.doubleToLongBits(other.price))

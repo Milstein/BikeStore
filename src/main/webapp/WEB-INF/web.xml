@@ -24,14 +24,14 @@
 	</error-page>
 		
 	<servlet>
-      <display-name>BikeStore-rest</display-name>
-	  <servlet-name>BikeStore-rest</servlet-name>
+      <display-name>bikestore-rest</display-name>
+	  <servlet-name>bikestore-rest</servlet-name>
       <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
       <init-param>
         <param-name>jersey.config.server.provider.packages</param-name>
         <param-value>
             io.swagger.jaxrs.listing,
-            BikeStore.rest
+            bikestore.rest
         </param-value>
       </init-param>
       
@@ -60,32 +60,9 @@
     </servlet>
 
 	<servlet-mapping>
-		<servlet-name>BikeStore-rest</servlet-name>
+		<servlet-name>bikestore-rest</servlet-name>
 		<url-pattern>/REST/*</url-pattern>
-	</servlet-mapping>
-
-	<servlet>
-		<display-name>BikeStore-enterprise-rest</display-name>
-		<servlet-name>BikeStore-enterprise-rest</servlet-name>
-		<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
-		<init-param>
-			<param-name>jersey.config.server.provider.packages</param-name>
-			<param-value>BikeStore.queue</param-value>
-		</init-param>
-		
-		<init-param>
-		    <param-name>jersey.config.server.provider.classnames</param-name>
-		    <param-value>org.glassfish.jersey.media.multipart.MultiPartFeature</param-value>
-		</init-param>
-		
-		<load-on-startup>2</load-on-startup>
-		<async-supported>true</async-supported>
-	</servlet>
-
-	<servlet-mapping>
-		<servlet-name>BikeStore-enterprise-rest</servlet-name>
-		<url-pattern>/RESTQ/*</url-pattern>
-	</servlet-mapping>
+	</servlet-mapping>	
 	
 	<session-config>
         <session-timeout>

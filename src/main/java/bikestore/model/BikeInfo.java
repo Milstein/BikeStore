@@ -10,9 +10,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonPropertyOrder({ "rowTotal", "id", "title", "description", "rating",
-		"price", "quantity", "type", "images", "addedOn", "deleted" })
+		"price", "quantity", "type", "images", "addedOn", "isactive" })
 @Row(colsOrder = { "Title", "Description", "Rating", "Price", "Quantity",
-		"Type", "Added On", "Is Deleted?" })
+		"Type", "Added On", "Is Active?" })
 public class BikeInfo {
 
 	@JsonProperty("rowTotal")
@@ -52,9 +52,9 @@ public class BikeInfo {
 	@Column(name = "Added On", dataFormat = "yyyy/MM/dd hh:mm:ss")
 	private Date addedOn = new Date();
 
-	@JsonProperty("deleted")
-	@Column(name = "Is Deleted?")
-	private boolean deleted = false;
+	@JsonProperty("isactive")
+	@Column(name = "Is Active?")
+	private boolean isactive = false;
 
 	public BikeInfo() {
 
@@ -132,12 +132,20 @@ public class BikeInfo {
 		this.images = images;
 	}
 
-	public boolean isDeleted() {
-		return deleted;
+	public Date getAddedOn() {
+		return addedOn;
 	}
 
-	public void setDeleted(boolean deleted) {
-		this.deleted = deleted;
+	public void setAddedOn(Date addedOn) {
+		this.addedOn = addedOn;
+	}
+
+	public boolean isIsactive() {
+		return isactive;
+	}
+
+	public void setIsactive(boolean isactive) {
+		this.isactive = isactive;
 	}
 
 }
