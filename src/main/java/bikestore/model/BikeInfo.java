@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonPropertyOrder({ "rowTotal", "id", "title", "description", "rating",
-		"price", "quantity", "type", "images", "addedOn", "isactive" })
+		"price", "quantity", "type", "addedon", "isactive" })
 @Row(colsOrder = { "Title", "Description", "Rating", "Price", "Quantity",
 		"Type", "Added On", "Is Active?" })
 public class BikeInfo {
@@ -31,7 +31,7 @@ public class BikeInfo {
 
 	@JsonProperty("rating")
 	@Column(name = "Rating")
-	private double rating;
+	private int rating;
 
 	@JsonProperty("price")
 	@Column(name = "Price")
@@ -45,12 +45,9 @@ public class BikeInfo {
 	@Column(name = "Type")
 	private String type = new String();
 
-	@JsonProperty("images")
-	private List<Image> images = new ArrayList<Image>();
-
-	@JsonProperty("addedOn")
+	@JsonProperty("addedon")
 	@Column(name = "Added On", dataFormat = "yyyy/MM/dd hh:mm:ss")
-	private Date addedOn = new Date();
+	private Date addedon = new Date();
 
 	@JsonProperty("isactive")
 	@Column(name = "Is Active?")
@@ -92,11 +89,11 @@ public class BikeInfo {
 		this.description = description;
 	}
 
-	public double getRating() {
+	public int getRating() {
 		return rating;
 	}
 
-	public void setRating(double rating) {
+	public void setRating(int rating) {
 		this.rating = rating;
 	}
 
@@ -124,28 +121,20 @@ public class BikeInfo {
 		this.type = type;
 	}
 
-	public List<Image> getImages() {
-		return images;
-	}
-
-	public void setImages(List<Image> images) {
-		this.images = images;
-	}
-
-	public Date getAddedOn() {
-		return addedOn;
-	}
-
-	public void setAddedOn(Date addedOn) {
-		this.addedOn = addedOn;
-	}
-
 	public boolean isIsactive() {
 		return isactive;
 	}
 
 	public void setIsactive(boolean isactive) {
 		this.isactive = isactive;
+	}
+
+	public Date getAddedon() {
+		return addedon;
+	}
+
+	public void setAddedon(Date addedon) {
+		this.addedon = addedon;
 	}
 
 }

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import org.mongodb.morphia.annotations.Embedded;
 import org.mongodb.morphia.annotations.Entity;
 import org.mongodb.morphia.annotations.Property;
 
@@ -25,7 +26,7 @@ public class Bike extends BaseEntity implements Serializable {
 	private String description = new String();
 
 	@Property("rating")
-	private double rating;
+	private int rating;
 
 	@Property("price")
 	private double price;
@@ -36,7 +37,7 @@ public class Bike extends BaseEntity implements Serializable {
 	@Property("type")
 	private String type = new String();
 
-	@Property("images")
+	@Embedded("images")
 	private List<Image> images = new ArrayList<Image>();
 
 	@Property("added on")
@@ -65,11 +66,11 @@ public class Bike extends BaseEntity implements Serializable {
 		this.description = description;
 	}
 
-	public double getRating() {
+	public int getRating() {
 		return rating;
 	}
 
-	public void setRating(double rating) {
+	public void setRating(int rating) {
 		this.rating = rating;
 	}
 
