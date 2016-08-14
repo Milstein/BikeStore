@@ -9,6 +9,7 @@ Done:
 + Export to Excel from the Grid 
 
 + All REST API are completed for client part also such as Get Bike Details by BikeId to use in BikeDeatil page
++ Swagger API Documentation : http://localhost:8181/bikestore/api-docs/
 
 Working On:
 - Latest Bike Binding in Front Page
@@ -22,6 +23,8 @@ To setup MongoDB you can follow this blog: http://blog.milstein.me/?ID=8
 + Eclipse IDE : https://eclipse.org/downloads/
 
 Need to import the whole project as Existing Maven Project. 
+
+
 
 
 
