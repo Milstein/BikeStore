@@ -62,13 +62,16 @@ $(function() {
 
 								$('#sliderContainer').append(bikeDetail);
 							});
-			console.log(bikes.length);
+
 			if (bikes.length > 0) {
 				$("#bulletNav").show();
 				$("#arrowNav").show();
+				latest.InitializeSlider();
+			} else {
+				csscody.info("<h2>" + 'Information Message' + "</h2><p>"
+						+ 'No Bikes in the Store!' + "</p>");
 			}
-
-			latest.InitializeSlider();
+			return false;
 		},
 
 		InitializeSlider : function(msg) {
