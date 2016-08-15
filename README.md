@@ -5,7 +5,7 @@ Features:
 Done:
 + Add New Bike with Description in CKEditor, Star Rating and File Upload (for images)
 + Grid to View all Bikes with Sorting and multiple selection for Deactivation of Bike listings.
-+ Search Options to narrow down the grid display i.e. filter based on Title, Added Date Range,  Price Range adn Active or Not
++ Search Options to narrow down the grid display i.e. filter based on Title, Added Date Range,  Price Range and Active or Not Condition
 + Export to Excel from the Grid 
 
 + All REST API are completed for client part also such as Get Bike Details by BikeId to use in BikeDeatil page
